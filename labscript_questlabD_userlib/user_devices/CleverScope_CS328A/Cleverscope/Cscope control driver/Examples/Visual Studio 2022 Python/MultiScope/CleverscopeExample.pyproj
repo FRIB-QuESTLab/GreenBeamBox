@@ -1,0 +1,48 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>a451472d-0a8b-4ea4-99c6-c3c76121316c</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>CleverscopeExample.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>CleverscopeExample</Name>
+    <RootNamespace>CleverscopeExample</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <DebugStdLib>False</DebugStdLib>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CleverscopeClasses.py" />
+    <Compile Include="CleverscopeInterface.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CleverscopeExample.py" />
+    <Compile Include="Multiple Scope.py" />
+    <Compile Include="T_AcquireSpec.py" />
+    <Compile Include="T_ChannelSpec.py" />
+    <Compile Include="T_InterfaceSpec.py" />
+    <Compile Include="T_ReplaySpec.py" />
+    <Compile Include="T_T0dt.py" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
