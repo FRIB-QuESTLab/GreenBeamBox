@@ -1,3 +1,6 @@
+obsolete/
+
+# Below is from github python gitignore template
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
