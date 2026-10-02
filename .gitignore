@@ -1,4 +1,5 @@
 obsolete/
+<<<<<<< HEAD
 
 # Below is from github python gitignore template
 # Byte-compiled / optimized / DLL files
@@ -219,3 +220,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+=======
+*.key
+logs/
+>>>>>>> 06266e7 (initial_commit)
