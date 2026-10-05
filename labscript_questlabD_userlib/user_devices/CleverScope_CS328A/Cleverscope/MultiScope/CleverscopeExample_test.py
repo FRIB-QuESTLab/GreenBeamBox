@@ -51,7 +51,7 @@ def DrawPlot(UnitA, UnitB, DualScope, FourChannel, Cautype):
     ChannelsTitle = " Two"
     channels = [
         ("Chan A", UnitA.ChannelAData),
-        # ("Chan B", UnitA.ChannelBData),
+        ("Chan B", UnitA.ChannelBData),
         ]
 
     # ------------------------------------------------------------
@@ -269,6 +269,22 @@ AcquireStopTime = 0.175;
 #Single Scope: Ensure Unit A has Master Slave turned off
 CscopeUnitA.SetDualScopelink(T_LinkMasterSlave.T_LinkMasterSlave_Unlinked, UnitATriggerChannel)
 DoAnAcquisition = CscopeUnitA.IsConnected()
+
+CscopeUnitA.ChannelSpecArray[0].Max=0.5
+CscopeUnitA.ChannelSpecArray[0].Min=-0.5
+
+print()
+print('Channel max A through D:')
+print(CscopeUnitA.ChannelSpecArray[0].Max)
+print(CscopeUnitA.ChannelSpecArray[1].Max)
+print(CscopeUnitA.ChannelSpecArray[2].Max)
+print(CscopeUnitA.ChannelSpecArray[3].Max)
+print()
+print('Channel min A through D:')
+print(CscopeUnitA.ChannelSpecArray[0].Min)
+print(CscopeUnitA.ChannelSpecArray[1].Min)
+print(CscopeUnitA.ChannelSpecArray[2].Min)
+print(CscopeUnitA.ChannelSpecArray[3].Min)
 
 ###########  Start the Acquisition  ########### 
 ########### Keep Looping doing acquisitions ########### 

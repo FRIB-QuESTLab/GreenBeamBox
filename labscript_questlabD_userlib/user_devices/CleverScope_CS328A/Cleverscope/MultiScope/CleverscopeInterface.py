@@ -22,7 +22,8 @@ class Cleverscope:
               UnitNumber, InterfaceSource, IPAddr, TCP_Port, SerialNumber,
               StartTime, StopTime, FrameNum, NumSamples, MaximumSamples,
               TriggerSource, TriggerLevel, LinkPort,
-              ProbeMinVoltage, ProbeMaxVoltage, ProbeAGain, ProbeBGain, ProbeCGain, ProbeDGain, ProbeCoupling
+              ProbeMinVoltage, ProbeMaxVoltage, 
+              ProbeAGain, ProbeBGain, ProbeCGain, ProbeDGain, ProbeCoupling
         ):
 
         self.AcquisitionUnit = ctypes.c_int32(UnitNumber)
