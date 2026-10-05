@@ -7,7 +7,7 @@ from datetime import datetime
 
 # CleverScope packages
 import sys
-sys.path.append('I:\\QuESTlab\\daq and control software\\labscript_questlabD_userlib\\user_devices\\CleverScope_CS328A\\Cleverscope\\Cscope control driver\\Examples\\Visual Studio 2022 Python\\MultiScope')
+sys.path.append('C:\\GreenBeamBox\\labscript_questlabD_userlib\\user_devices\\CleverScope_CS328A\\Cleverscope\\MultiScope')
 
 import CleverscopeInterface
 from T_AcquireSpec import T_AcquireSpec, T_AcquireAction, T_SigGenWaveform, T_LinkPort, T_TrigChannel
