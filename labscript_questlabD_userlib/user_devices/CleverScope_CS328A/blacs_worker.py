@@ -87,8 +87,8 @@ class CleverScope_CS328AWorker(Worker):
             TriggerSource = trigger_chan_object, 
             TriggerLevel = self.triggerLevel, 
             LinkPort = T_LinkPort.T_LinkPort_Debug,
-            ProbeMinVoltage = self.minVoltage,
-            ProbeMaxVoltage = self.maxVoltage, 
+            ProbeMinVoltage = self.minVoltage_a,
+            ProbeMaxVoltage = self.maxVoltage_a, 
             ProbeAGain = T_Probe.T_Probe_x1,
             ProbeBGain = T_Probe.T_Probe_x1,
             ProbeCGain = T_Probe.T_Probe_x1,
@@ -121,8 +121,13 @@ class CleverScope_CS328AWorker(Worker):
 
         else:
             raise LabscriptError("Unit A Failed to connect")
+        
+        # Set min and max voltages for ChannelA and ChannelB independently
+        self.connection.ChannelSpecArray[0].Min=self.minVoltage_a
+        self.connection.ChannelSpecArray[0].Max=self.maxVoltage_a
+        self.connection.ChannelSpecArray[1].Min=self.minVoltage_b
+        self.connection.ChannelSpecArray[1].Max=self.maxVoltage_b
             
-
             
     
     def shutdown(self):
@@ -145,12 +150,11 @@ class CleverScope_CS328AWorker(Worker):
                 if self.connection.CheckForSampleCaptureComplete():
                     UnitA_WaitingForSamples = False
                     print("Sample Capture Complete")
-
             if time()-LastTime > 1:
                 print(".")
                 LastTime = time()
-
             sleep(0.01)
+            
         print('acquisition details:')
         self.PrintT0dt("Unit A:", self.connection)
         

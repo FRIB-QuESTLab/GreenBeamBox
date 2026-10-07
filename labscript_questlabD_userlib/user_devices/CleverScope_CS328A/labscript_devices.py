@@ -26,8 +26,10 @@ class CleverScope_CS328A(IntermediateDevice):
                 'frameNum',
                 'startTime',
                 'stopTime',
-                'minVoltage',
-                'maxVoltage',
+                'minVoltage_a',
+                'maxVoltage_a',
+                'minVoltage_b',
+                'maxVoltage_b',
                 'numSamples',
                 'triggerChannel',
                 'triggerLevel',
@@ -49,8 +51,10 @@ class CleverScope_CS328A(IntermediateDevice):
             trigger_duration=1e-3,
             startTime = -0.02,
             stopTime = 0.02,
-            minVoltage = -5,
-            maxVoltage = 5,
+            minVoltage_a = -5,
+            maxVoltage_a = 5,
+            minVoltage_b = -5,
+            maxVoltage_b = 5,
             numSamples = int(4e6),
             maximumSamples = int(4e6),
             frameNum = 0,
@@ -113,8 +117,10 @@ class CleverScope_CS328A(IntermediateDevice):
         self.trigger_duration = trigger_duration
         self.startTime = startTime
         self.stopTime = stopTime
-        self.minVoltage = minVoltage
-        self.maxVoltage = maxVoltage
+        self.minVoltage_a = minVoltage_a
+        self.maxVoltage_a = maxVoltage_a
+        self.minVoltage_b = minVoltage_b
+        self.maxVoltage_b = maxVoltage_b
         self.numSamples = numSamples
         self.maximumSamples = maximumSamples  # model dependent. Typically 4 million.
         self.frameNum = frameNum

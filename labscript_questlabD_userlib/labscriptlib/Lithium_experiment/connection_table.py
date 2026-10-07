@@ -25,9 +25,11 @@ def ConnectionTable():
                        parent_device=prawnblaster.clocklines[0],
                        num_AI=2, 
                        startTime = -0.0005,
-                       stopTime = (5/30)*1.01,  # duration of the shot, plus a little more
-                       minVoltage = -0.3,
-                       maxVoltage = 1,
+                       stopTime = (10/30)*1.01,  # duration of the shot, plus a little more
+                       minVoltage_a = -0.95,
+                       maxVoltage_a = 0.05,
+                       minVoltage_b = -0.05,
+                       maxVoltage_b = 0.95,
                        numSamples = int(2e6),
                        triggerChannel = 'ext',
                        triggerLevel=0.5,
